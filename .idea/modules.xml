@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Simpsons Character Viewer/app.iml" filepath="$PROJECT_DIR$/Simpsons Character Viewer/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpsonsCharacterViewer.iml" filepath="$PROJECT_DIR$/SimpsonsCharacterViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/The Wire Character Viewer/thewirecharacterviewer.iml" filepath="$PROJECT_DIR$/The Wire Character Viewer/thewirecharacterviewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/data/model.iml" filepath="$PROJECT_DIR$/data/model.iml" />
+    </modules>
+  </component>
+</project>
