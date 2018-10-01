@@ -37,6 +37,7 @@ public class SimpsCharViewerPresenter implements SimpsCharViewerMvpPresenter {
                         Log.d("onCompleted : ","");
                     }
 
+
                     @Override
                     public void onError(Throwable e) {
                         Log.d("Problem : ", e.getMessage());
