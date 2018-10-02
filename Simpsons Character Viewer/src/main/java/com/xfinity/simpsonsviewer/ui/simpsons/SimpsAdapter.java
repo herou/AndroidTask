@@ -32,7 +32,7 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
     @Override
     public SimpsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.simps_adapter, parent, false);
+        View itemView = inflater.inflate(R.layout.adapter_simps_mobile, parent, false);
 
         return new SimpsAdapter.ViewHolder(itemView);
     }

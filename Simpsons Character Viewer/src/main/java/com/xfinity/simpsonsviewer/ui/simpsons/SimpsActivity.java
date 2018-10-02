@@ -2,12 +2,15 @@ package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-
 import com.kennyc.view.MultiStateView;
 import com.xfinity.simpsonsviewer.R;
+import com.xfinity.simpsonsviewer.utils.Util;
 
 import java.util.List;
 
@@ -30,11 +33,10 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
 
         init();
         onErrorStateClick();
-
     }
 
     public void init(){
-        mMultiStateView = (MultiStateView) findViewById(R.id.multiStateView);
+        mMultiStateView = findViewById(R.id.multiStateView);
         mRecyclerView = findViewById(R.id.recyclerView);
 
         simpsCharViewerPresenter = new SimpsPresenter(getApplicationContext(), this);
@@ -80,4 +82,28 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
     public void viewState() {
         mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if(Util.checkIfMobilePhone(SimpsActivity.this) == true){
+            getMenuInflater().inflate(R.menu.menu, menu);
+        }
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.menu_list){
+            mRecyclerView.setLayoutManager(linearLayoutManager);
+            mRecyclerView.setHasFixedSize(true);
+            mRecyclerView.setAdapter(simpsAdapter);
+        }else if(id == R.id.menu_grid){
+            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+            mRecyclerView.setHasFixedSize(true);
+            mRecyclerView.setAdapter(simpsAdapter);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

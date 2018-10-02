@@ -40,7 +40,6 @@ public class SimpsDetailActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle("barney");
     }
 
     public void showDetails(){
