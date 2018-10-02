@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xfinity.simpsonsviewer.R;
@@ -17,22 +18,30 @@ import com.xfinity.simpsonsviewer.utils.Util;
 import java.util.List;
 
 import xfinity.com.model.network.model.RelatedTopic;
+import xfinity.com.utils.ImageLoader;
 
 
 public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> {
 
     List<RelatedTopic> feedItemList;
     private Context context;
+    SimpsActivity simpsActivit;
 
-    public SimpsAdapter(Context context,  List<RelatedTopic> feedItemList) {
+    public SimpsAdapter(Context context, List<RelatedTopic> feedItemList, SimpsActivity simpsActivity) {
         this.context = context;
         this.feedItemList = feedItemList;
+        this.simpsActivit = simpsActivity;
     }
 
     @Override
     public SimpsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.adapter_simps_mobile, parent, false);
+        View itemView;
+        if(Util.checkIfMobilePhone(simpsActivit) == true){
+            itemView = inflater.inflate(R.layout.adapter_simps_mobile, parent, false);
+        }else{
+            itemView = inflater.inflate(R.layout.adapter_simps_tablet, parent, false);
+        }
 
         return new SimpsAdapter.ViewHolder(itemView);
     }
@@ -44,6 +53,9 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
 
         holder.txt_title.setText(Util.splitString(relatedTopic.getText().toString(),0));
         holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(),1));
+        holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(),1));
+
+        ImageLoader.loadImage(relatedTopic.getIcon().getURL().toString(), holder.img_icon);
 
         holder.card_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,12 +80,15 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
 
         private TextView txt_title;
         private TextView txt_desc;
+        private ImageView img_icon;
         private CardView card_view;
+
 
         public ViewHolder(View itemView) {
             super(itemView);
             txt_title = itemView.findViewById(R.id.txt_title);
             txt_desc = itemView.findViewById(R.id.txt_desc);
+            img_icon = itemView.findViewById(R.id.img_icon);
             card_view = itemView.findViewById(R.id.card_view);
         }
     }

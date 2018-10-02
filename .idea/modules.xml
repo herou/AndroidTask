@@ -3,13 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Simpsons Character Viewer/Simpsons Character Viewer.iml" filepath="$PROJECT_DIR$/Simpsons Character Viewer/Simpsons Character Viewer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SimpsonsCharacterViewer.iml" filepath="$PROJECT_DIR$/SimpsonsCharacterViewer.iml" />
+      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\SimpsonsCharacterViewer.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\SimpsonsCharacterViewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/The Wire Character Viewer/The Wire Character Viewer.iml" filepath="$PROJECT_DIR$/The Wire Character Viewer/The Wire Character Viewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidengineertask.iml" filepath="$PROJECT_DIR$/androidengineertask.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Simpsons Character Viewer/app.iml" filepath="$PROJECT_DIR$/Simpsons Character Viewer/app.iml" />
+      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\Simpsons Character Viewer\app.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\Simpsons Character Viewer\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/data/data.iml" filepath="$PROJECT_DIR$/data/data.iml" />
-      <module fileurl="file://$PROJECT_DIR$/data/model.iml" filepath="$PROJECT_DIR$/data/model.iml" />
-      <module fileurl="file://$PROJECT_DIR$/The Wire Character Viewer/thewirecharacterviewer.iml" filepath="$PROJECT_DIR$/The Wire Character Viewer/thewirecharacterviewer.iml" />
+      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\data\model.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\data\model.iml" />
+      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\The Wire Character Viewer\thewirecharacterviewer.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\The Wire Character Viewer\thewirecharacterviewer.iml" />
     </modules>
   </component>
 </project>

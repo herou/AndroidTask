@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import com.kennyc.view.MultiStateView;
+
 import com.xfinity.simpsonsviewer.R;
 import com.xfinity.simpsonsviewer.utils.Util;
 
@@ -56,7 +57,7 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
 
     @Override
     public void showSimpsCharViewer(List<RelatedTopic> relatedTopics) {
-        simpsAdapter = new SimpsAdapter(getApplicationContext(), relatedTopics);
+        simpsAdapter = new SimpsAdapter(getApplicationContext(), relatedTopics,SimpsActivity.this);
         linearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setHasFixedSize(true);
