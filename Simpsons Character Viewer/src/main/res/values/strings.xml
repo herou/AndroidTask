@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Simpsons Character Viewer</string>
+    <string name="title_activity_simps_detail_adapter">SimpsDetailAdapter</string>
 </resources>

@@ -14,15 +14,15 @@ import xfinity.com.model.network.model.SimpsonCharModel;
  * Created by Eljo on 9/5/2018.
  */
 
-public class SimpsCharViewerPresenter implements SimpsCharViewerMvpPresenter {
+public class SimpsPresenter implements SimpsMvpPresenter {
 
     Context context;
-    SimpsCharViewerActivity lobbyActivity;
+    SimpsActivity simpsCharViewerActivity;
     ApiHelper apiHelper;
 
-    public SimpsCharViewerPresenter(Context context, SimpsCharViewerActivity lobbyActivity) {
+    public SimpsPresenter(Context context, SimpsActivity simpsCharViewerActivity) {
         this.context = context;
-        this.lobbyActivity = lobbyActivity;
+        this.simpsCharViewerActivity = simpsCharViewerActivity;
         apiHelper = new AppApiHelper();
     }
 
@@ -47,8 +47,9 @@ public class SimpsCharViewerPresenter implements SimpsCharViewerMvpPresenter {
 
                     @Override
                     public void onNext(SimpsonCharModel simpsonCharModel) {
-                        Log.d("onNext : ","");
-
+                        if(simpsonCharModel.getRelatedTopics().size() > 0){
+                            simpsCharViewerActivity.showSimpsCharViewer(simpsonCharModel.getRelatedTopics());
+                        }
                     }
                 });
     }
