@@ -1,4 +1,4 @@
-package com.xfinity.simpsonsviewer.ui;
+package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import java.util.List;
 
@@ -11,4 +11,10 @@ import xfinity.com.model.network.model.RelatedTopic;
 public interface SimpsMvpView {
 
     void  showSimpsCharViewer(List<RelatedTopic> relatedTopics);
+
+    void viewStateLoading();
+
+    void viewStateError();
+
+    void viewState();
 }

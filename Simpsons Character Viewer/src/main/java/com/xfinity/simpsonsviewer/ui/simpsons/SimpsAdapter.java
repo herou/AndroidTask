@@ -1,4 +1,4 @@
-package com.xfinity.simpsonsviewer.ui;
+package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xfinity.simpsonsviewer.R;
+import com.xfinity.simpsonsviewer.ui.simpsons_detail.SimpsDetailActivity;
+import com.xfinity.simpsonsviewer.utils.Constants;
+import com.xfinity.simpsonsviewer.utils.Util;
 
 import java.util.List;
 
@@ -39,14 +42,16 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
     public void onBindViewHolder(final SimpsAdapter.ViewHolder holder, int position) {
         final RelatedTopic relatedTopic = feedItemList.get(position);
 
-        holder.txt_text.setText(relatedTopic.getText().toString());
+        holder.txt_title.setText(Util.splitString(relatedTopic.getText().toString(),0));
+        holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(),1));
 
         holder.card_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(context, SimpsDetailActivity.class);
-                myIntent.putExtra("Text", relatedTopic.getText().toString());
-                myIntent.putExtra("IconUrl", relatedTopic.getIcon().getURL().toString());
+                myIntent.putExtra(Constants.TITLE,Util.splitString(relatedTopic.getText().toString(),0));
+                myIntent.putExtra(Constants.DESC, Util.splitString(relatedTopic.getText().toString(),1));
+                myIntent.putExtra(Constants.ICON_URL, relatedTopic.getIcon().getURL().toString());
                 context.startActivity(myIntent);
             }
         });
@@ -61,12 +66,14 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView txt_text;
+        private TextView txt_title;
+        private TextView txt_desc;
         private CardView card_view;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            txt_text = itemView.findViewById(R.id.txt_text);
+            txt_title = itemView.findViewById(R.id.txt_title);
+            txt_desc = itemView.findViewById(R.id.txt_desc);
             card_view = itemView.findViewById(R.id.card_view);
         }
     }

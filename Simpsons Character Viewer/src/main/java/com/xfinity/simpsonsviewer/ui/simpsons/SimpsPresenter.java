@@ -1,4 +1,4 @@
-package com.xfinity.simpsonsviewer.ui;
+package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import android.content.Context;
 import android.util.Log;
@@ -28,6 +28,7 @@ public class SimpsPresenter implements SimpsMvpPresenter {
 
     @Override
     public void getSimpsonsCharacterViewer() {
+        simpsCharViewerActivity.viewStateLoading();
         apiHelper.getSimpsonsCharacterViewer()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -41,13 +42,14 @@ public class SimpsPresenter implements SimpsMvpPresenter {
                     @Override
                     public void onError(Throwable e) {
                         Log.d("Problem : ", e.getMessage());
-
+                        simpsCharViewerActivity.viewStateError();
 
                     }
 
                     @Override
                     public void onNext(SimpsonCharModel simpsonCharModel) {
                         if(simpsonCharModel.getRelatedTopics().size() > 0){
+                            simpsCharViewerActivity.viewState();
                             simpsCharViewerActivity.showSimpsCharViewer(simpsonCharModel.getRelatedTopics());
                         }
                     }

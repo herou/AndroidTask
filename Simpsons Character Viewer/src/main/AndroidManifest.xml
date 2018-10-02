@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.SimpsActivity">
+        <activity android:name=".ui.simpsons.SimpsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.SimpsDetailActivity"
+            android:name=".ui.simpsons_detail.SimpsDetailActivity"
             android:label="@string/title_activity_simps_detail_adapter"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>

@@ -1,18 +1,19 @@
-package com.xfinity.simpsonsviewer.ui;
+package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
+import com.kennyc.view.MultiStateView;
 import com.xfinity.simpsonsviewer.R;
 
 import java.util.List;
 
 import xfinity.com.model.network.model.RelatedTopic;
 
-public class SimpsActivity extends AppCompatActivity implements SimpsMvpView {
+public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, MultiStateView.StateListener {
 
     RecyclerView mRecyclerView;
     SimpsAdapter simpsAdapter;
@@ -20,20 +21,35 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView {
 
     SimpsPresenter simpsCharViewerPresenter;
 
+    MultiStateView mMultiStateView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         init();
+        onErrorStateClick();
 
     }
 
     public void init(){
+        mMultiStateView = (MultiStateView) findViewById(R.id.multiStateView);
         mRecyclerView = findViewById(R.id.recyclerView);
 
         simpsCharViewerPresenter = new SimpsPresenter(getApplicationContext(), this);
         simpsCharViewerPresenter.getSimpsonsCharacterViewer();
+    }
+
+    public void onErrorStateClick(){
+        mMultiStateView.setStateListener(this);
+        mMultiStateView.getView(MultiStateView.VIEW_STATE_ERROR).findViewById(R.id.retry)
+                .setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        simpsCharViewerPresenter.getSimpsonsCharacterViewer();
+                    }
+                });
     }
 
     @Override
@@ -43,5 +59,25 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView {
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(simpsAdapter);
+    }
+
+    @Override
+    public void onStateChanged(int i) {
+
+    }
+
+    @Override
+    public void viewStateLoading() {
+        mMultiStateView.setViewState(MultiStateView.VIEW_STATE_LOADING);
+    }
+
+    @Override
+    public void viewStateError() {
+        mMultiStateView.setViewState(MultiStateView.VIEW_STATE_ERROR);
+    }
+
+    @Override
+    public void viewState() {
+        mMultiStateView.setViewState(MultiStateView.VIEW_STATE_CONTENT);
     }
 }
