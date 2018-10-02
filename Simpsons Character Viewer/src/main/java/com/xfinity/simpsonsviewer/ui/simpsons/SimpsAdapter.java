@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import com.xfinity.simpsonsviewer.R;
 import com.xfinity.simpsonsviewer.ui.simpsons_detail.SimpsDetailActivity;
-import com.xfinity.simpsonsviewer.utils.Constants;
-import com.xfinity.simpsonsviewer.utils.Util;
+import xfinity.com.utils.Constants;
+import xfinity.com.utils.Util;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
     private Context context;
     SimpsActivity simpsActivit;
 
+
     public SimpsAdapter(Context context, List<RelatedTopic> feedItemList, SimpsActivity simpsActivity) {
         this.context = context;
         this.feedItemList = feedItemList;
@@ -38,12 +39,26 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView;
         if(Util.checkIfMobilePhone(simpsActivit) == true){
-            itemView = inflater.inflate(R.layout.adapter_simps_mobile, parent, false);
+            if(Constants.LINEAR  == true){
+                itemView = inflater.inflate(R.layout.adapter_simps_mobile_linearlayout, parent, false);
+            }else{
+                itemView = inflater.inflate(R.layout.adapter_simps_mobile_gridlayout, parent, false);
+            }
         }else{
             itemView = inflater.inflate(R.layout.adapter_simps_tablet, parent, false);
         }
 
         return new SimpsAdapter.ViewHolder(itemView);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
 
@@ -52,7 +67,6 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
         final RelatedTopic relatedTopic = feedItemList.get(position);
 
         holder.txt_title.setText(Util.splitString(relatedTopic.getText().toString(),0));
-        holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(),1));
         holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(),1));
 
         ImageLoader.loadImage(relatedTopic.getIcon().getURL().toString(), holder.img_icon);
@@ -75,14 +89,12 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
 
     }
 
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView txt_title;
         private TextView txt_desc;
         private ImageView img_icon;
         private CardView card_view;
-
 
         public ViewHolder(View itemView) {
             super(itemView);

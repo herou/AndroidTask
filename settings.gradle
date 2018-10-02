@@ -1,1 +1,1 @@
-include ':Simpsons Character Viewer', ':The Wire Character Viewer', ':data'
+include ':Simpsons Character Viewer', ':The Wire Character Viewer', ':sharedLibrary'

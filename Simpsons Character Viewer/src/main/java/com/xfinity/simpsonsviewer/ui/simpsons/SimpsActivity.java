@@ -11,7 +11,8 @@ import android.view.View;
 import com.kennyc.view.MultiStateView;
 
 import com.xfinity.simpsonsviewer.R;
-import com.xfinity.simpsonsviewer.utils.Util;
+import xfinity.com.utils.Constants;
+import xfinity.com.utils.Util;
 
 import java.util.List;
 
@@ -26,6 +27,8 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
     SimpsPresenter simpsCharViewerPresenter;
 
     MultiStateView mMultiStateView;
+
+    List<RelatedTopic> relatedTopicList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +60,8 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
 
     @Override
     public void showSimpsCharViewer(List<RelatedTopic> relatedTopics) {
-        simpsAdapter = new SimpsAdapter(getApplicationContext(), relatedTopics,SimpsActivity.this);
-        linearLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(linearLayoutManager);
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setAdapter(simpsAdapter);
+        relatedTopicList = relatedTopics;
+        setLinearLayoutManager();
     }
 
     @Override
@@ -96,15 +96,29 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.menu_list){
-            mRecyclerView.setLayoutManager(linearLayoutManager);
-            mRecyclerView.setHasFixedSize(true);
-            mRecyclerView.setAdapter(simpsAdapter);
+            Constants.LINEAR = true;
+            setLinearLayoutManager();
         }else if(id == R.id.menu_grid){
-            mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
-            mRecyclerView.setHasFixedSize(true);
-            mRecyclerView.setAdapter(simpsAdapter);
+            Constants.LINEAR = false;
+            setGridLayoutManager();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setLinearLayoutManager(){
+        simpsAdapter = new SimpsAdapter(getApplicationContext(), relatedTopicList,SimpsActivity.this);
+        linearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setAdapter(simpsAdapter);
+    }
+
+    public void setGridLayoutManager(){
+        simpsAdapter = new SimpsAdapter(getApplicationContext(), relatedTopicList,SimpsActivity.this);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setAdapter(simpsAdapter);
+        simpsAdapter.notifyDataSetChanged();
     }
 
 }

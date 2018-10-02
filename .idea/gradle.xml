@@ -10,7 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Simpsons Character Viewer" />
             <option value="$PROJECT_DIR$/The Wire Character Viewer" />
-            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/sharedLibrary" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

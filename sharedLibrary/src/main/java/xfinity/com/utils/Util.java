@@ -1,4 +1,4 @@
-package com.xfinity.simpsonsviewer.utils;
+package xfinity.com.utils;
 
 import android.app.Activity;
 import android.content.Context;

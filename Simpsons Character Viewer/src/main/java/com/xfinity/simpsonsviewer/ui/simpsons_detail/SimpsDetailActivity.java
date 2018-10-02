@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xfinity.simpsonsviewer.R;
-import com.xfinity.simpsonsviewer.ui.simpsons.SimpsPresenter;
-import com.xfinity.simpsonsviewer.utils.Constants;
+
+import xfinity.com.utils.Constants;
 
 import xfinity.com.utils.ImageLoader;
 
