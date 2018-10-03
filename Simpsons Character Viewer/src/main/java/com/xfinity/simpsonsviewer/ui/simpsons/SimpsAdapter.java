@@ -9,12 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.xfinity.simpsonsviewer.R;
 import com.xfinity.simpsonsviewer.ui.simpsons_detail.SimpsDetailActivity;
-
 import java.util.List;
-
 import xfinity.com.model.network.model.RelatedTopic;
 import xfinity.com.utils.Constants;
 import xfinity.com.utils.ImageLoader;

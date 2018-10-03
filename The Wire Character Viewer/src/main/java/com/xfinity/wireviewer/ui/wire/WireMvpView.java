@@ -1,7 +1,6 @@
 package com.xfinity.wireviewer.ui.wire;
 
 import java.util.List;
-
 import xfinity.com.model.network.model.RelatedTopic;
 
 /**

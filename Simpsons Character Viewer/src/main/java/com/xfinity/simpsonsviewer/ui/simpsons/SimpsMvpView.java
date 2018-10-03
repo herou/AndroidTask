@@ -1,7 +1,6 @@
 package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import java.util.List;
-
 import xfinity.com.model.network.model.RelatedTopic;
 
 /**

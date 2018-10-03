@@ -9,13 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import com.kennyc.view.MultiStateView;
-
 import com.xfinity.simpsonsviewer.R;
 import xfinity.com.utils.Constants;
 import xfinity.com.utils.Util;
-
 import java.util.List;
-
 import xfinity.com.model.network.model.RelatedTopic;
 
 public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, MultiStateView.StateListener {
@@ -33,7 +30,7 @@ public class SimpsActivity extends AppCompatActivity implements SimpsMvpView, Mu
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_simps);
 
         init();
         onErrorStateClick();

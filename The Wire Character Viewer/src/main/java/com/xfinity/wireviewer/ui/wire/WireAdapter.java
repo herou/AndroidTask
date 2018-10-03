@@ -9,10 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.xfinity.wireviewer.R;
 import com.xfinity.wireviewer.ui.wire_details.WireDetailsActivity;
-
 import java.util.List;
 import xfinity.com.model.network.model.RelatedTopic;
 import xfinity.com.utils.Constants;

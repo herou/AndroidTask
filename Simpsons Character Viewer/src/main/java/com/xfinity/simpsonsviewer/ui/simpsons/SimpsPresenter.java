@@ -2,14 +2,12 @@ package com.xfinity.simpsonsviewer.ui.simpsons;
 
 import android.content.Context;
 import android.util.Log;
-
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import xfinity.com.model.network.ApiHelper;
 import xfinity.com.model.network.AppApiHelper;
 import xfinity.com.model.network.model.SimpsonsModel;
-import xfinity.com.model.network.model.WireModel;
 
 /**
  * Created by Eljo on 9/5/2018.

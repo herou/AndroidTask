@@ -6,11 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.xfinity.simpsonsviewer.R;
-
 import xfinity.com.utils.Constants;
-
 import xfinity.com.utils.ImageLoader;
 
 public class SimpsDetailActivity extends AppCompatActivity {

@@ -2,7 +2,6 @@ package com.xfinity.wireviewer.ui.wire;
 
 import android.content.Context;
 import android.util.Log;
-
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
