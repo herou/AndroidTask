@@ -1,4 +1,4 @@
-package com.xfinity.wireviewer.ui;
+package com.xfinity.wireviewer.ui.wire;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xfinity.wireviewer.R;
+import com.xfinity.wireviewer.ui.wire_details.WireDetailsActivity;
 
 import java.util.List;
 import xfinity.com.model.network.model.RelatedTopic;
@@ -71,7 +72,7 @@ public class WireAdapter extends RecyclerView.Adapter<WireAdapter.ViewHolder> {
             holder.card_view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent myIntent = new Intent(context, WireActivity.class);
+                    Intent myIntent = new Intent(context, WireDetailsActivity.class);
                     myIntent.putExtra(Constants.TITLE, Util.splitString(relatedTopic.getText().toString(), 0));
                     myIntent.putExtra(Constants.DESC, Util.splitString(relatedTopic.getText().toString(), 1));
                     myIntent.putExtra(Constants.ICON_URL, relatedTopic.getIcon().getURL().toString());

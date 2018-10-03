@@ -1,4 +1,4 @@
-package com.xfinity.wireviewer.ui;
+package com.xfinity.wireviewer.ui.wire;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

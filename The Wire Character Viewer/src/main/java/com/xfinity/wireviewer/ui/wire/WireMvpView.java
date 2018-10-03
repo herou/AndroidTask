@@ -1,4 +1,4 @@
-package com.xfinity.wireviewer.ui;
+package com.xfinity.wireviewer.ui.wire;
 
 import java.util.List;
 
