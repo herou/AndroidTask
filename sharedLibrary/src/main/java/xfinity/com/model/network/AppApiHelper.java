@@ -1,8 +1,8 @@
 package xfinity.com.model.network;
 
 import rx.Observable;
-import xfinity.com.model.network.model.SimpsonCharModel;
-import xfinity.com.model.network.model.SimpsonsWireModel;
+import xfinity.com.model.network.model.WireModel;
+import xfinity.com.model.network.model.SimpsonsModel;
 
 
 /**
@@ -14,12 +14,12 @@ public class AppApiHelper implements ApiHelper{
     final API apiService = APIClient.getClient().create(API.class);
 
     @Override
-    public Observable<SimpsonCharModel> getSimpsonsCharacterViewer() {
+    public Observable<SimpsonsModel> getSimpsonsCharacterViewer() {
         return apiService.getSimpsonsCharacterViewer();
     }
 
     @Override
-    public Observable<SimpsonsWireModel> getWireCharacterViewer() {
+    public Observable<WireModel> getWireCharacterViewer() {
         return apiService.getWireCharacterViewer();
     }
 }

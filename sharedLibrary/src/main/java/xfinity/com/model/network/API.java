@@ -1,8 +1,8 @@
 package xfinity.com.model.network;
 import retrofit2.http.GET;
 import rx.Observable;
-import xfinity.com.model.network.model.SimpsonCharModel;
-import xfinity.com.model.network.model.SimpsonsWireModel;
+import xfinity.com.model.network.model.WireModel;
+import xfinity.com.model.network.model.SimpsonsModel;
 
 /**
  * Created by root on 1/20/18.
@@ -11,9 +11,9 @@ import xfinity.com.model.network.model.SimpsonsWireModel;
 public interface API {
 
     @GET("?q=simpsons+characters&format=json")
-    Observable<SimpsonCharModel> getSimpsonsCharacterViewer();
+    Observable<SimpsonsModel> getSimpsonsCharacterViewer();
 
     @GET("?q=the+wire+characters&format=json")
-    Observable<SimpsonsWireModel> getWireCharacterViewer();
+    Observable<WireModel> getWireCharacterViewer();
 }
 

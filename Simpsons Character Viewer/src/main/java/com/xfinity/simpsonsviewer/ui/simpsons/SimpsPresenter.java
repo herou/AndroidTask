@@ -8,7 +8,8 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import xfinity.com.model.network.ApiHelper;
 import xfinity.com.model.network.AppApiHelper;
-import xfinity.com.model.network.model.SimpsonCharModel;
+import xfinity.com.model.network.model.SimpsonsModel;
+import xfinity.com.model.network.model.WireModel;
 
 /**
  * Created by Eljo on 9/5/2018.
@@ -32,7 +33,7 @@ public class SimpsPresenter implements SimpsMvpPresenter {
         apiHelper.getSimpsonsCharacterViewer()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<SimpsonCharModel>() {
+                .subscribe(new Subscriber<SimpsonsModel>() {
                     @Override
                     public void onCompleted() {
                         Log.d("onCompleted : ","");
@@ -47,10 +48,10 @@ public class SimpsPresenter implements SimpsMvpPresenter {
                     }
 
                     @Override
-                    public void onNext(SimpsonCharModel simpsonCharModel) {
-                        if(simpsonCharModel.getRelatedTopics().size() > 0){
+                    public void onNext(SimpsonsModel simpsonsModel) {
+                        if(simpsonsModel.getRelatedTopics().size() > 0){
                             simpsCharViewerActivity.viewState();
-                            simpsCharViewerActivity.showSimpsCharViewer(simpsonCharModel.getRelatedTopics());
+                            simpsCharViewerActivity.showSimpsCharViewer(simpsonsModel.getRelatedTopics());
                         }
                     }
                 });

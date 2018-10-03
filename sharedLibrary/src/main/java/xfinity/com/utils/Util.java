@@ -17,6 +17,9 @@ public class Util {
 
     public static String splitString(String string,int i) {
         String[] parts = string.split(" - ");
+        if(parts.length == 1){
+            return parts[0];
+        }
         return parts[i];
     }
 

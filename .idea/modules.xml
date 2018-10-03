@@ -3,17 +3,19 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Simpsons Character Viewer/Simpsons Character Viewer.iml" filepath="$PROJECT_DIR$/Simpsons Character Viewer/Simpsons Character Viewer.iml" />
-      <module fileurl="file://C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\Simpsons Character Viewer\Simpsons Character Viewer.iml" filepath="C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\Simpsons Character Viewer\Simpsons Character Viewer.iml" />
-      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\SimpsonsCharacterViewer.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\SimpsonsCharacterViewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/Simpsons Character Viewer/Simpsons Character Viewer.iml" filepath="$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/Simpsons Character Viewer/Simpsons Character Viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/SimpsonsCharacterViewer.iml" filepath="$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/SimpsonsCharacterViewer.iml" />
       <module fileurl="file://$PROJECT_DIR$/The Wire Character Viewer/The Wire Character Viewer.iml" filepath="$PROJECT_DIR$/The Wire Character Viewer/The Wire Character Viewer.iml" />
-      <module fileurl="file://C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\The Wire Character Viewer\The Wire Character Viewer.iml" filepath="C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\The Wire Character Viewer\The Wire Character Viewer.iml" />
-      <module fileurl="file://C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\androidengineertask.iml" filepath="C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\androidengineertask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/The Wire Character Viewer/The Wire Character Viewer.iml" filepath="$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/The Wire Character Viewer/The Wire Character Viewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidengineertask.iml" filepath="$PROJECT_DIR$/androidengineertask.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/androidengineertask.iml" filepath="$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/androidengineertask.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidengineertask1.iml" filepath="$PROJECT_DIR$/androidengineertask1.iml" />
-      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\Simpsons Character Viewer\app.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\Simpsons Character Viewer\app.iml" />
-      <module fileurl="file://C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\data\data.iml" filepath="C:\Users\ADMIN\AndroidStudioProjects\androidengineertask1\data\data.iml" />
-      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\data\model.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\data\model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/Simpsons Character Viewer/app.iml" filepath="$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/Simpsons Character Viewer/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/data/data.iml" filepath="$PROJECT_DIR$/../../../ADMIN/AndroidStudioProjects/androidengineertask1/data/data.iml" />
       <module fileurl="file://$PROJECT_DIR$/sharedLibrary/data.iml" filepath="$PROJECT_DIR$/sharedLibrary/data.iml" />
-      <module fileurl="file://C:\Users\Eljo\StudioProjects\androidengineertask\The Wire Character Viewer\thewirecharacterviewer.iml" filepath="C:\Users\Eljo\StudioProjects\androidengineertask\The Wire Character Viewer\thewirecharacterviewer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/data/model.iml" filepath="$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/data/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sharedLibrary/sharedLibrary.iml" filepath="$PROJECT_DIR$/sharedLibrary/sharedLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/The Wire Character Viewer/thewirecharacterviewer.iml" filepath="$PROJECT_DIR$/../../../Eljo/StudioProjects/androidengineertask/The Wire Character Viewer/thewirecharacterviewer.iml" />
     </modules>
   </component>
 </project>

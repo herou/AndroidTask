@@ -22,6 +22,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 
 }
 
@@ -33,5 +36,15 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:0.5'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    compile project (':sharedLibrary')
+    //Data Layer
+    compile project(':sharedLibrary')
+
+    //RecycleView
+    implementation "com.android.support:recyclerview-v7:26.1.0"
+
+    //CardView
+    implementation 'com.android.support:cardview-v7:27.1.0'
+
+    //Handle state of the views
+    compile 'com.github.Kennyc1012:MultiStateView:1.3.2'
 }

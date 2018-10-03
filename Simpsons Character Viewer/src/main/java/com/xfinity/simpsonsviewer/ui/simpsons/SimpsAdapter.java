@@ -12,13 +12,13 @@ import android.widget.TextView;
 
 import com.xfinity.simpsonsviewer.R;
 import com.xfinity.simpsonsviewer.ui.simpsons_detail.SimpsDetailActivity;
-import xfinity.com.utils.Constants;
-import xfinity.com.utils.Util;
 
 import java.util.List;
 
 import xfinity.com.model.network.model.RelatedTopic;
+import xfinity.com.utils.Constants;
 import xfinity.com.utils.ImageLoader;
+import xfinity.com.utils.Util;
 
 
 public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> {
@@ -66,21 +66,22 @@ public class SimpsAdapter extends RecyclerView.Adapter<SimpsAdapter.ViewHolder> 
     public void onBindViewHolder(final SimpsAdapter.ViewHolder holder, int position) {
         final RelatedTopic relatedTopic = feedItemList.get(position);
 
-        holder.txt_title.setText(Util.splitString(relatedTopic.getText().toString(),0));
-        holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(),1));
+        holder.txt_title.setText(Util.splitString(relatedTopic.getText().toString(), 0));
+        holder.txt_desc.setText(Util.splitString(relatedTopic.getText().toString(), 1));
 
         ImageLoader.loadImage(relatedTopic.getIcon().getURL().toString(), holder.img_icon);
-
-        holder.card_view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(context, SimpsDetailActivity.class);
-                myIntent.putExtra(Constants.TITLE,Util.splitString(relatedTopic.getText().toString(),0));
-                myIntent.putExtra(Constants.DESC, Util.splitString(relatedTopic.getText().toString(),1));
-                myIntent.putExtra(Constants.ICON_URL, relatedTopic.getIcon().getURL().toString());
-                context.startActivity(myIntent);
-            }
-        });
+        if (Util.checkIfMobilePhone(simpsActivit) == true) {
+            holder.card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(context, SimpsDetailActivity.class);
+                    myIntent.putExtra(Constants.TITLE, Util.splitString(relatedTopic.getText().toString(), 0));
+                    myIntent.putExtra(Constants.DESC, Util.splitString(relatedTopic.getText().toString(), 1));
+                    myIntent.putExtra(Constants.ICON_URL, relatedTopic.getIcon().getURL().toString());
+                    context.startActivity(myIntent);
+                }
+            });
+        }
     }
 
     @Override

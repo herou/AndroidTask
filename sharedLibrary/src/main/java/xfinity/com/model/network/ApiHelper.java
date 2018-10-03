@@ -1,8 +1,8 @@
 package xfinity.com.model.network;
 
 import rx.Observable;
-import xfinity.com.model.network.model.SimpsonCharModel;
-import xfinity.com.model.network.model.SimpsonsWireModel;
+import xfinity.com.model.network.model.WireModel;
+import xfinity.com.model.network.model.SimpsonsModel;
 
 /**
  * Created by root on 1/20/18.
@@ -10,7 +10,7 @@ import xfinity.com.model.network.model.SimpsonsWireModel;
 
 public interface ApiHelper {
 
-      Observable<SimpsonCharModel> getSimpsonsCharacterViewer();
+      Observable<SimpsonsModel> getSimpsonsCharacterViewer();
 
-      Observable<SimpsonsWireModel> getWireCharacterViewer();
+      Observable<WireModel> getWireCharacterViewer();
 }
